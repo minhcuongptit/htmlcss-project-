@@ -1,5 +1,10 @@
 html.dark {
-  --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(39%)
-    saturate(919%) hue-rotate(210deg) brightness(101%) contrast(97%);
+  --text-color: #fff;
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(138deg) brightness(106%) contrast(101%);
+  --header-bg-color: #171c28;
+  --top-group-bg-color: #292e39;
+  --top-group-box-shadow: rgba(0, 0, 0, 0.2);
+  --top-group-separate: #ededf6;
+  --top-user-box-shadow: rgba(0, 0, 0, 0.08);
 }
