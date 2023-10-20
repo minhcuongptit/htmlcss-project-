@@ -2,3 +2,16 @@
 @use "./theme";
 @use "./layout";
 @use "./component";
+
+$break-points: (
+  "sm": 575px,
+  "md": 768px,
+  "lg": 1024px,
+);
+@each $infix, $break-point in $break-points {
+  @media (min-width: #{$break-point}) {
+    .col-#{$infix} {
+      width: 120px;
+    }
+  }
+}
