@@ -1,0 +1,153 @@
+@mixin styleFormText() {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
+
+.filter-form {
+  padding-top: 2rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  &__inner {
+    padding: 3rem;
+    background-color: var(--navbar-bg-color);
+    border-radius: 2rem;
+    filter: drop-shadow(0px 40px 90px var(--filter-form-shadow));
+  }
+
+  &__heading,
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 145.455%;
+  }
+
+  &__list {
+    display: flex;
+    margin-top: 3rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+    height: 0.2rem;
+    background: var(--filter-form-slide-color);
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: 6px solid #ffb700;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    &::before {
+      left: var(--slide-before-position);
+    }
+
+    &::after {
+      left: var(--slide-after-position);
+    }
+  }
+  &__group {
+    display: flex;
+    column-gap: 3rem;
+    &--inline {
+    }
+
+    .minmax-label {
+      @include styleFormText();
+      display: block;
+      margin-bottom: 1rem;
+    }
+    &__input-minmax {
+      @include styleFormText();
+      border-radius: 0.6rem;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid var(--minmax-input);
+    }
+  }
+
+  &__split-line {
+    width: 0.1rem;
+    background: var(--filter-form-split-line);
+    margin: 0 3rem;
+  }
+
+  &__select-wrap {
+    height: 4.5rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--minmax-input);
+    display: flex;
+    align-items: center;
+  }
+
+  &__select {
+    @include styleFormText();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.4rem;
+    min-width: var(--width, 10.8rem);
+    height: calc(100% - 10px);
+  }
+  &__select + &__select {
+    border-left: 1px solid var(--filter-form-slide-color);
+  }
+
+  &__arrow {
+    width: 1.6rem;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 2rem;
+  }
+  &__tag {
+    @include styleFormText();
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.6rem;
+    background: var(--filter-form-tag-bg-color);
+    color: var(--filter-form-tag-color);
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  &__search-brand {
+    height: 4.5rem;
+    border-radius: 0.6rem;
+    padding: 0 1.6rem;
+    border: 1px solid var(--minmax-input);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 146.667%;
+    width: 100%;
+  }
+
+  &__input {
+    border: unset;
+    outline: unset;
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 146.667%;
+    text-decoration: none;
+  }
+}

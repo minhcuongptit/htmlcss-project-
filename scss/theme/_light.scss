@@ -12,7 +12,7 @@
   --top-group-separate: #ededf6;
   --top-user-box-shadow: rgba(0, 0, 0, 0.08);
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     --header-bg-color: #fff;
   }
 
@@ -25,4 +25,27 @@
 
   --navbar-shadow-color: rgba(200, 200, 200, 0.4);
   --navbar-bg-color: #fff;
+
+  // category item
+  --cate-item-bg-color: #eee;
+  --cate-item-thumb-bg-color: #fff;
+
+  // product list
+  --product-item-bg: #fff;
+  --filter-text-color: #6c6c72;
+  --product-item-shadow: rgba(237, 237, 246, 0.2);
+
+  --product-item-img-bg: #fff;
+
+  --product-item-btn-like-bg: #fff;
+  --product-item-btn-shadow: rgba(124, 124, 124, 0.2);
+  --product-item-brand: #9e9da8;
+
+  // filter-form
+  --filter-form-shadow: rgba(200, 200, 200, 0.4);
+  --filter-form-slide-color: #d2d1d6;
+  --minmax-input: #d2d1d6;
+  --filter-form-split-line: #eee;
+  --filter-form-tag-bg-color: #f8f8fb;
+  --filter-form-tag-color: #9e9da8;
 }
