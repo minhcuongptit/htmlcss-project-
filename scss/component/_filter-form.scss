@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 @mixin styleFormText() {
   font-size: 1.4rem;
   font-weight: 500;
@@ -10,11 +12,34 @@
   top: 100%;
   right: 0;
   z-index: 1;
+
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.25s;
+
+  @include abstracts.screen(sm) {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
   &__inner {
     padding: 3rem;
     background-color: var(--navbar-bg-color);
     border-radius: 2rem;
     filter: drop-shadow(0px 40px 90px var(--filter-form-shadow));
+
+    @include abstracts.screen(sm) {
+      height: 100%;
+    }
   }
 
   &__heading,
@@ -27,6 +52,11 @@
   &__list {
     display: flex;
     margin-top: 3rem;
+
+    @include abstracts.screen(xl) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
   }
 
   &__item {
@@ -65,6 +95,10 @@
   &__group {
     display: flex;
     column-gap: 3rem;
+    @include abstracts.screen(sm) {
+      display: flex;
+      column-gap: 20px;
+    }
     &--inline {
     }
 
@@ -73,11 +107,16 @@
       display: block;
       margin-bottom: 1rem;
     }
-    &__input-minmax {
-      @include styleFormText();
-      border-radius: 0.6rem;
-      padding: 0.8rem 1.2rem;
-      border: 1px solid var(--minmax-input);
+  }
+
+  &__input-minmax {
+    @include styleFormText();
+    border-radius: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--minmax-input);
+    outline: 1px solid var(--minmax-input);
+    @include abstracts.screen(sm) {
+      width: 100%;
     }
   }
 
@@ -85,6 +124,12 @@
     width: 0.1rem;
     background: var(--filter-form-split-line);
     margin: 0 3rem;
+
+    @include abstracts.screen(xl) {
+      height: 2px;
+      width: 100%;
+      margin: 0 !important;
+    }
   }
 
   &__select-wrap {
@@ -93,6 +138,9 @@
     border: 1px solid var(--minmax-input);
     display: flex;
     align-items: center;
+    @include abstracts.screen(sm) {
+      width: 100%;
+    }
   }
 
   &__select {
@@ -103,6 +151,10 @@
     padding: 0 1.4rem;
     min-width: var(--width, 10.8rem);
     height: calc(100% - 10px);
+
+    @include abstracts.screen(xl) {
+      width: 70%;
+    }
   }
   &__select + &__select {
     border-left: 1px solid var(--filter-form-slide-color);
@@ -115,6 +167,9 @@
   &__tags {
     display: flex;
     gap: 2rem;
+    @include abstracts.screen(xl) {
+      width: 80%;
+    }
   }
   &__tag {
     @include styleFormText();
@@ -124,6 +179,9 @@
     color: var(--filter-form-tag-color);
     &:hover {
       color: var(--text-color);
+    }
+    @include abstracts.screen(xl) {
+      flex: 1;
     }
   }
 
@@ -141,6 +199,10 @@
     width: 100%;
   }
 
+  &__search-icon {
+    filter: var(--filter-form-search-icon-color);
+  }
+
   &__input {
     border: unset;
     outline: unset;
@@ -149,5 +211,37 @@
     font-weight: 400;
     line-height: 146.667%;
     text-decoration: none;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.8rem;
+
+    @include abstracts.screen(sm) {
+      position: fixed;
+      bottom: 3rem;
+      right: 3rem;
+      background-color: inherit;
+    }
+  }
+
+  &__btn--cancel {
+  }
+
+  &__btn--show {
+    height: 3.8rem;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    color: var(--filter-form-show-btn-color);
+  }
+
+  &__arrow-up {
+    position: absolute;
+    top: -17px;
+    right: 24px;
+    height: 20.5px;
+    filter: var(--filter-form-bg-color);
   }
 }

@@ -1,0 +1,122 @@
+@use "../abstracts";
+.auth {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  &__media,
+  &__content {
+    flex: 1;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    position: relative;
+
+    &-navigate {
+      cursor: pointer;
+      position: absolute;
+      bottom: 5rem;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 5rem;
+    margin-left: 0;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  &__desc {
+    max-width: 41.2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 144.444%;
+  }
+
+  &__content {
+    padding: 0 30px;
+    display: flex;
+    &-inner {
+      padding: 5rem 0;
+      margin: auto;
+      width: min(46rem, 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include abstracts.screen(md) {
+      &.show {
+        translate: 00%;
+      }
+      background-color: var(--body-bg);
+      position: fixed;
+      translate: 100%;
+      inset: 0;
+      overflow-y: auto;
+      z-index: 1;
+      transition: all 0.5s;
+    }
+  }
+
+  &__heading {
+    margin: 5rem 0 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 146.667%;
+    color: var(--sign-in-form-heading-color);
+  }
+
+  &__title {
+    padding: 0 3rem;
+    color: #9e9da8;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+    margin-bottom: 6rem;
+  }
+
+  &__form {
+    width: 100%;
+
+    &:has(:invalid) .form__btn-sign-up {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &__link {
+    color: #0071dc;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+  }
+  &__sign-in-option {
+    margin-top: 8.8rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  &__option {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 144.444%;
+  }
+  &__link--sign-in {
+    color: var(--sign-in-form-heading-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 144.444%;
+  }
+}

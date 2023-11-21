@@ -177,6 +177,18 @@
     height: 3rem;
     background: --top-group-separate;
   }
+
+  &__sign-in {
+    color: #000;
+  }
+
+  &__btn-auth {
+    @include abstracts.screen(md) {
+      padding: 0 12px !important;
+      height: 36px !important;
+      font-size: 1.5rem !important;
+    }
+  }
 }
 
 .top-user {

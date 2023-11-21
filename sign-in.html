@@ -1,28 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In | Grocery</title>
 
     <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
@@ -37,16 +23,79 @@
     <script src="./assets/js/scripts.js"></script>
   </head>
   <body>
-    <header id="header"></header>
-    <script>
-      load("#header", "./template/header.html")
-    </script>
+    <div class="auth">
+      <div class="auth__media">
+        <!-- logo  -->
+        <a href="./" class="logo d-none d-md-flex auth__logo">
+          <img src="./assets/icon/logo.svg" alt="grocerymart" class="logo__img" />
+          <h2 class="logo__title">grocerymart</h2>
+        </a>
 
-    <h1>Sign In</h1>
+        <img src="./assets/images/auth/sign-in.svg" alt="" class="auth__img" />
+        <p class="auth__desc">The best of luxury brand values, high quality products, and innovative services</p>
+        <img
+          src="./assets/images/auth/auth-navigate.png"
+          alt=""
+          class="d-none d-md-flex auth__media-navigate js-toggle"
+          toggle-target="#auth__content"
+        />
+      </div>
+      <div class="auth__content hide" id="auth__content">
+        <div class="auth__content-inner">
+          <!-- logo  -->
+          <a href="./" class="logo auth__logo">
+            <img src="./assets/icon/logo.svg" alt="grocerymart" class="logo__img" />
+            <h2 class="logo__title">grocerymart</h2>
+          </a>
+          <h1 class="auth__heading">Sign Up</h1>
+          <p class="auth__title">Let’s create your account and Shop like a pro and save money.</p>
+          <form action="./index-logined.html" class="auth__form">
+            <div class="form__group">
+              <div class="form__text-input">
+                <input type="email" placeholder="Email" class="form__input" required />
+                <img src="./assets/images/auth/message.svg" alt="" class="form__icon" />
+              </div>
+              <span class="form__error-text">Email không đúng định dạng</span>
+            </div>
+            <div class="form__group">
+              <div class="form__text-input">
+                <input type="password" placeholder="Mật khẩu" class="form__input" required minlength="6" />
+                <img src="./assets/images/auth/lock.svg" alt="" class="form__icon" />
+              </div>
+              <span class="form__error-text">Mật khẩu ít nhất 6 ký tự</span>
+            </div>
+            <div class="form__group">
+              <div class="form__text-input">
+                <input type="password" placeholder="Nhập lại mật khẩu" class="form__input" required minlength="6" />
+                <img src="./assets/images/auth/lock.svg" alt="" class="form__icon" />
+              </div>
+              <span class="form__error-text">Mật khẩu ít nhất 6 ký tự</span>
+            </div>
+            <div class="form__group form__group--inline">
+              <label class="form__check">
+                <input type="checkbox" class="form__check-input" />
+                <span class="form__check-label">Set as default card</span>
+              </label>
+              <a href="#!" class="auth__link">Recovery Password</a>
+            </div>
 
-    <footer id="footer"></footer>
+            <div class="form__group form__btn-group">
+              <button class="btn btn--primary form__btn-sign-up">Sign up</button>
+              <button class="btn btn--outline btn--full-width btn--icon">
+                <img src="./assets/images/auth/google.svg" alt="" />
+                <span class="form__btn-text">Sign in with Google</span>
+              </button>
+            </div>
+          </form>
+          <div class="auth__sign-in-option">
+            <p class="auth__option">You have an account yet?</p>
+            <div class="auth__link auth__link--sign-in">Sign In</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
-      load("#footer", "./template/footer.html")
+      window.dispatchEvent(new Event("template-loaded"))
     </script>
   </body>
 </html>

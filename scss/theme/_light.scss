@@ -6,6 +6,7 @@
     contrast(97%);
 
   --header-bg-color: #eeeeee;
+  --footer-bg-color: var(--header-bg-color);
   --body-bg: #f6f6f6;
   --top-group-bg-color: #fff;
   --top-group-box-shadow: rgba(237, 237, 246, 0.2);
@@ -42,10 +43,16 @@
   --product-item-brand: #9e9da8;
 
   // filter-form
+  --filter-home-btn-bg-color: #fff;
+
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --filter-form-slide-color: #d2d1d6;
   --minmax-input: #d2d1d6;
   --filter-form-split-line: #eee;
   --filter-form-tag-bg-color: #f8f8fb;
   --filter-form-tag-color: #9e9da8;
+
+  // sing-in form
+  --sign-in-form-heading-color: #000;
+  --sign-in-input-border-color: #d2d1d6;
 }
