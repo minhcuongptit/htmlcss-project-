@@ -24,7 +24,7 @@
     }
   }
 
-  &__logo {
+  &__media-logo {
     position: absolute;
     top: 5rem;
     margin-left: 0;
@@ -107,6 +107,10 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
+
+    @include abstracts.screen(md) {
+      margin-top: 5.6rem;
+    }
   }
   &__option {
     font-size: 1.8rem;

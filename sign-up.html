@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In | Grocery</title>
+    <title>Sign Up | Grocery</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon.png" />
@@ -24,18 +24,30 @@
   </head>
   <body>
     <div class="auth">
-      <div class="auth__media d-md-none">
+      <div class="auth__media">
+        <!-- logo  -->
+        <a href="./" class="logo d-none d-md-flex auth__media-logo">
+          <img src="./assets/icon/logo.svg" alt="grocerymart" class="logo__img" />
+          <h2 class="logo__title">grocerymart</h2>
+        </a>
+
         <img src="./assets/images/auth/sign-in.svg" alt="" class="auth__img" />
         <p class="auth__desc">The best of luxury brand values, high quality products, and innovative services</p>
+        <img
+          src="./assets/images/auth/auth-navigate.png"
+          alt=""
+          class="d-none d-md-flex auth__media-navigate js-toggle"
+          toggle-target="#auth__content"
+        />
       </div>
-      <div class="auth__content show">
+      <div class="auth__content hide" id="auth__content">
         <div class="auth__content-inner">
           <!-- logo  -->
           <a href="./" class="logo auth__logo">
             <img src="./assets/icon/logo.svg" alt="grocerymart" class="logo__img" />
             <h2 class="logo__title">grocerymart</h2>
           </a>
-          <h1 class="auth__heading">Sign In</h1>
+          <h1 class="auth__heading">Sign Up</h1>
           <p class="auth__title">Let’s create your account and Shop like a pro and save money.</p>
           <form action="./index-logined.html" class="auth__form">
             <div class="form__group">
@@ -52,17 +64,22 @@
               </div>
               <span class="form__error-text">Mật khẩu ít nhất 6 ký tự</span>
             </div>
-
+            <div class="form__group">
+              <div class="form__text-input">
+                <input type="password" placeholder="Nhập lại mật khẩu" class="form__input" required minlength="6" />
+                <img src="./assets/images/auth/lock.svg" alt="" class="form__icon" />
+              </div>
+              <span class="form__error-text">Mật khẩu ít nhất 6 ký tự</span>
+            </div>
             <div class="form__group form__group--inline">
               <label class="form__check">
                 <input type="checkbox" class="form__check-input" />
                 <span class="form__check-label">Set as default card</span>
               </label>
-              <a href="#!" class="auth__link">Recovery Password</a>
             </div>
 
             <div class="form__group form__btn-group">
-              <button class="btn btn--primary form__btn-sign-up">Sign In</button>
+              <button class="btn btn--primary form__btn-sign-up">Sign up</button>
               <button class="btn btn--outline btn--full-width btn--icon">
                 <img src="./assets/images/auth/google.svg" alt="" />
                 <span class="form__btn-text">Sign in with Google</span>
@@ -70,8 +87,8 @@
             </div>
           </form>
           <div class="auth__sign-in-option">
-            <p class="auth__option">You have not an account yet?</p>
-            <a href="./sign-up.html" class="auth__link auth__link--sign-in">Sign Up</a>
+            <p class="auth__option">You have an account yet?</p>
+            <a href="./sign-in.html" class="auth__link auth__link--sign-in">Sign In</a>
           </div>
         </div>
       </div>

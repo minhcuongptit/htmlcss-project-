@@ -20,6 +20,23 @@
   @include abstracts.screen(sm) {
     padding: 1.6rem 0;
   }
+
+  &__logo {
+    @include abstracts.screen(lg) {
+      gap: 1rem;
+      margin-left: 3.9rem;
+      &--title {
+        @include abstracts.screen(lg) {
+          font-style: 1.8rem;
+        }
+      }
+    }
+    &-img {
+      @include abstracts.screen(lg) {
+        width: 2.4rem;
+      }
+    }
+  }
 }
 
 .navbar {
